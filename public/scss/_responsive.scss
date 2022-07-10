@@ -1,0 +1,210 @@
+@media screen and (max-width: 1100px){
+    .home{
+        .filmPopular{
+            .sliderFilmPopulaire{
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+    .FilmCategory{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .singleActor {
+        .singleActorCenter{
+            display: block;
+            text-align: center;
+        }
+        .singleActorDown{
+            display: block;
+            text-align: center;
+        }
+    }
+    header {
+        .dropdownMenu {
+          .dropdown-content {
+            display: block;
+            position: static!important;
+            transform: none!important;
+          }
+        }
+      }
+      .headerUp {
+        display: block;
+        padding: 0;
+        .searchBar {
+          width: 100%;
+          display: inline-flex;
+          justify-content: center;
+          margin-bottom: 15px;
+          input {
+            width: 90%;
+          }
+        }
+    
+        .menu-nav {
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 45;
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          height: 100vh;
+          width: 100vw;
+          padding: 25% 0 0;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, 0.95);
+    
+          li {
+            text-align: center;
+            font-size: 28px;
+            padding: 25px;
+            display: block;
+          }
+          &.open {
+            display: flex;
+          }
+        }
+        &.open {
+          visibility: visible;
+        }
+    
+        .menu-btn {
+          visibility: visible;
+        }
+      }
+
+}
+@media screen and (max-width: 900px){
+    .singleMovie {
+        .singleFilmUp{
+            .singleFilmTitle{
+                font-size: 1.5rem;
+            }
+        }
+        .singleFilmMid {
+            .singleFilmPosterResume{
+                display: block;
+                text-align: center;
+                .singleFilmCenterDown{
+                    margin: 10px;
+                }
+            }  
+            .info{
+                display: block;
+                text-align: center;
+                .Trailer{
+                    margin-top: 5%;
+                    iframe{
+                        width: 300px;
+                        height: 250px;
+                    }
+                }
+            }  
+        } 
+         
+    }
+}
+@media screen and (max-width: 900px){
+    .headerUp{
+        display: block;
+        padding: 0;
+        .searchBar{
+            width: 100%;
+            display: inline-flex;
+            justify-content: center;
+            margin-bottom: 15px;
+            input{
+                width: 90%; 
+            }
+        }
+        ul{
+            display: none;
+            flex-direction: column;
+            li{
+                text-align: center;
+                font-size: 28px;
+                padding: 25px;
+                display: block;
+            }
+            &.open{
+                display: flex;
+            }
+        }
+        .menu-btn{
+            visibility: visible;
+        }
+    }
+    .home{
+        .filmPopular{
+            .sliderFilmPopulaire{
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+    .FilmCategory{
+        grid-template-columns: repeat(2, 1fr);
+    }  
+    
+    .singleMovie {
+        .singleFilmDown{
+            .FilmActorTitle{
+                text-align: center;
+            }
+            .actorsSingleFilm{
+                margin-top: 10%;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }  
+    }  
+}
+
+@media screen and (max-width: 700px){
+    .home{
+        article{
+            font-size: 1.5rem;
+        }
+        .carousel{
+            height: 20vh;
+            .slider{
+                height: 100%;
+            }
+            .titleFilmPopulaire{
+                font-size: 0.8rem;
+            }
+        }
+        
+        .filmPopular{
+            .sliderFilmPopulaire{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+    } 
+    .FilmCategory{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .singleMovie {
+        .singleFilmUp{
+            .singleFilmTitle{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px){
+    .home{
+        .filmPopular{
+            .sliderFilmPopulaire{
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    } 
+    .singleMovie {
+        .singleFilmDown{
+            .actorsSingleFilm{
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }  
+    }
+}

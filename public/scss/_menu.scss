@@ -1,0 +1,132 @@
+.headerUp{
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+    padding: 15px 30px;
+
+    .menu-nav{
+        list-style: none;
+        margin: auto 0;
+        li{
+            margin: 0 2px;
+            color: $secondary-color;
+            font-family: $font;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+        }
+    }
+    .searchBar{
+        display: flex;
+        margin: auto 0;
+        height: 35px;
+        line-height: 35px;
+        input{
+           border: none;
+           outline: none;
+           background: $secondary-color;
+           height: 100%;
+           padding: 0 10px;
+           font-size:20px;
+           font-family: $font;
+           width: 350px;
+           border-radius: 55px 0 0 55px;
+        }
+
+        i{
+            color: $primary-color;
+            font-size: 20px;
+            background: $secondary-color;
+            height: 100%;
+            padding: 8px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1;
+            &::after{
+                height: 100%;
+                width: 0%;
+                content: '';
+                background: $third-color;
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: -1;
+                transition: 0.3s;
+            }
+            &:hover::after{
+                width: 100%;
+            }
+            &:hover{
+                color: $secondary-color;
+            }
+        }
+        
+
+    }
+}  
+
+
+.menu-btn{
+    visibility: hidden;
+    position: absolute;
+    z-index: 46;
+    right: 1rem;
+    top: 0;
+    height: 20px;
+    width: 28px;
+    cursor: pointer;
+    @include transition-ease;
+
+
+    &_burger{
+        position: absolute;
+        right: 0;
+        top: 1.5rem;
+        width: 28px;
+        height: 3px;
+        background: $secondary-color;
+        @include transition-ease;
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 0;
+            width: 28px;
+            height: 3px;
+            background: $secondary-color;
+            @include transition-ease;
+        }
+        
+        &::after{
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background: $secondary-color;
+            @include transition-ease;
+        }
+
+
+        &.open{
+            position: fixed;
+            transform: rotate(720deg);
+            background: transparent;
+
+            &::before{
+                transform: rotate(45deg) translate(5px, 8px);
+            }
+
+
+            &::after{
+                width: 28px;
+                transform: rotate(-45deg) translate(3px, -7px);
+            }
+        }
+        
+    }
+}
