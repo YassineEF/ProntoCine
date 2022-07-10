@@ -2,6 +2,10 @@
 define('TRATTO', "http://localhost/Cinelovers");
 $pageButton = $page;
 $pagePrevious = $page;
+
+if ($serieCat['results'] == null || !is_numeric($page) || $page > 500) {
+    header("Location: ".TRATTO."/Movies/error");
+} else {
 ?>
 
 <h2 class="FilmCategoryTitle"><?= str_replace("_", " ", $category) ?></h2>
@@ -44,7 +48,7 @@ $pagePrevious = $page;
             echo '<a href="' . TRATTO . '/Series/categoryTv/' . $category . '/' . $pageButton . '" >Next <i class="fas fa-chevron-circle-right"></i></a>';
         }
     }
-
+    }
 
     ?>
 </div>

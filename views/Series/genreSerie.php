@@ -2,6 +2,11 @@
 define('TRATTO', "http://localhost/Cinelovers");
     $pageButton = $page;
     $pagePrevious =$page;
+
+
+    if (sizeof($serieList['results']) <= 3 || !is_numeric($id)) {
+        header("Location: ../../../Movies/error");
+    } else {
 ?>
 <h2 class="FilmCategoryTitle">
     <?php
@@ -41,7 +46,7 @@ define('TRATTO', "http://localhost/Cinelovers");
         $pageButton ++;
         echo '<a href="'. TRATTO .'/Series/genreSerie/' . $id . '/' . $pageButton . '" >Next <i class="fas fa-chevron-circle-right"></i></a>';
     }
-
+}
 
     ?>
 </div>

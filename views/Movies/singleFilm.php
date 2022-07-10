@@ -17,7 +17,9 @@ function convertDate($dateAmerican)
     return $dateFrench;
 }
 //error handle
-
+if(sizeof($movie) <= 3) {
+    header("Location: ../error");
+} else {
 
 ?>
 <div class="singleMovie">
@@ -120,3 +122,6 @@ function convertDate($dateAmerican)
 
     </div>
 </div>
+<?php 
+}
+?>

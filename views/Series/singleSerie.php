@@ -16,6 +16,10 @@ function convertDate($dateAmerican)
     $dateFrench = date("d-m-Y", $timestamp);
     return $dateFrench;
 }
+
+if (sizeof($oneSerie) <= 3) {
+    header("Location: ../../Movies/error");
+} else {
 ?>
 <div class="singleMovie">
     <div class="singleFilmUp">
@@ -134,3 +138,6 @@ function convertDate($dateAmerican)
 
     </div>
 </div>
+<?php
+}
+?>

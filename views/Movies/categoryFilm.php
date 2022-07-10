@@ -2,26 +2,30 @@
 define('TRATTO', "http://localhost/Cinelovers");
 $pageButton = $page;
 $pagePrevious = $page;
+
+if ( $movieCat['results'] == null || !is_numeric($page) || $page > 500) {
+    header("Location: ".TRATTO."/Movies/error");
+} else {
 ?>
 
-<h2 class="FilmCategoryTitle"><?= $category == 'top_rated' ? 'top rated' : $category ?></h2>
-<div class="FilmCategory">
-    <?php
+    <h2 class="FilmCategoryTitle"><?= $category == 'top_rated' ? 'top rated' : $category ?></h2>
+    <div class="FilmCategory">
+        <?php
 
-    foreach ($movieCat['results'] as $oneFilmCat) {
-        echo '<figure>';
-        if ($oneFilmCat['poster_path'] == null) {
-            echo '<a href="../../singleFilm/' . $oneFilmCat['id'] . '"><img src="../../public/assets/img/ProfilePicNA.png" alt="' . $oneFilmCat['title'] . '" class="">';
-        } else {
-            echo '<a href="../../singleFilm/' . $oneFilmCat['id'] . '"><img src="https://image.tmdb.org/t/p/w342' . $oneFilmCat['poster_path'] . '"alt="' . $oneFilmCat['title'] . '" class="">';
+        foreach ($movieCat['results'] as $oneFilmCat) {
+            echo '<figure>';
+            if ($oneFilmCat['poster_path'] == null) {
+                echo '<a href="../../singleFilm/' . $oneFilmCat['id'] . '"><img src="../../public/assets/img/ProfilePicNA.png" alt="' . $oneFilmCat['title'] . '" class="">';
+            } else {
+                echo '<a href="../../singleFilm/' . $oneFilmCat['id'] . '"><img src="https://image.tmdb.org/t/p/w342' . $oneFilmCat['poster_path'] . '"alt="' . $oneFilmCat['title'] . '" class="">';
+            }
+            echo '<figcaption>' . $oneFilmCat['title'] . '</figcaption></a>';
+            echo '</figure>';
         }
-        echo '<figcaption>' . $oneFilmCat['title'] . '</figcaption></a>';
-        echo '</figure>';
-    }
-    ?>
-</div>
+        ?>
+    </div>
 
-<div class="buttonsPages">
+    <div class="buttonsPages">
     <?php
     if ($pagePrevious <= 1) {
         echo '<a href="#">No previous pages</a>';
@@ -44,7 +48,7 @@ $pagePrevious = $page;
             echo '<a href="' . TRATTO . '/Movies/categoryFilm/' . $category . '/' . $pageButton . '" >Next <i class="fas fa-chevron-circle-right"></i></a>';
         }
     }
-
+}
 
     ?>
-</div>
+    </div>
