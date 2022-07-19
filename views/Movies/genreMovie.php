@@ -1,5 +1,5 @@
 <?php
-define('TRATTO', "http://localhost/Cinelovers");
+define('TRATTO', "http://localhost/ProntoCine");
 $pageButton = $page;
 $pagePrevious = $page;
 if (sizeof($movieList['results']) <= 3 || !is_numeric($id)) {

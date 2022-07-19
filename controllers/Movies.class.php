@@ -13,42 +13,37 @@ class Movies extends Controller
         $series =  $this->Movie->getData("/tv/popular");
 
         $this->render('index', ['movies' => $movies, 'series' => $series]);
-        // $this->render('index',compact('movies'));
     }
     public function singleFilm($id)
     {
-        // $this->loadModel("Movie");
         $movie = $this->Movie->getData("/movie/$id");
         $video = $this->Movie->getData("/movie/$id/videos");
         $cast = $this->Movie->getData("/movie/$id/credits");
         $this->render('singleFilm', ['movie' => $movie, 'video' => $video, 'cast' => $cast]);
     }
-    public function genreMovie($id,$page)
+
+    public function genreMovie($id, $page)
     {
-        // $this->loadModel("Movie");
-        $movieList = $this->Movie->getData("/discover/movie",["with_genres"=> $id, "page" => $page]);
+        $movieList = $this->Movie->getData("/discover/movie", ["with_genres" => $id, "page" => $page]);
         $this->render('genreMovie', ['movieList' => $movieList, 'id' => $id, 'page' => $page]);
     }
-    public function categoryFilm($category,$page)
+
+    public function categoryFilm($category, $page)
     {
         // $this->loadModel("Movie");
-        $movieCat = $this->Movie->getData("/movie/$category",["page" => $page]);
+        $movieCat = $this->Movie->getData("/movie/$category", ["page" => $page]);
         $this->render('categoryFilm', ['movieCat' => $movieCat, 'category' => $category, 'page' => $page]);
     }
     public function find()
     {
-        // $this->loadModel("Movie");
-
         $queryString = explode('=', $_SERVER['REQUEST_URI']);
         $query = $queryString[1];
 
-        $searchRes = $this->Movie->getData("/search/multi",["query" => $query]);
+        $searchRes = $this->Movie->getData("/search/multi", ["query" => $query]);
         $this->render('find', ['searchRes' => $searchRes, 'query' => $query]);
-
     }
     public function error()
     {
         $this->render('error');
-
     }
 }

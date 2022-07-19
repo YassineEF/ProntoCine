@@ -1,5 +1,5 @@
 <?php
-define('TRATTO', "http://localhost/Cinelovers");
+define('TRATTO', "http://localhost/ProntoCine");
 $pageButton = $page;
 $pagePrevious = $page;
 

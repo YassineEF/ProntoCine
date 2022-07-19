@@ -6,7 +6,7 @@ if(empty($query)){
  <h2 class="FilmCategoryTitle">Search Result</h2>
         <div class="FilmCategory">
             <?php
-            if ($searchRes['results'] == 0) {
+            if (empty($searchRes['results'])) {
                 echo '<h2 class="FilmCategoryTitle">No results available</h2>';
             } else {
                 foreach ($searchRes['results']  as $searchResult) {

@@ -1,5 +1,5 @@
 <?php
-define('RACINE', "http://localhost/Cinelovers");
+define('RACINE', "http://localhost/ProntoCine");
 ?>
 <!DOCTYPE html>
 <html lang="en">
